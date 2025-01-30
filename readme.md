@@ -65,8 +65,3 @@ A pasta **"prints"** contém imagens que ilustram o funcionamento do projeto. Ab
 
 ---
 
-Este README serve como guia para entender o propósito, funcionamento e estrutura do projeto. Qualquer dúvida ou sugestão, sinta-se à vontade para contribuir! 🚀
-
-# projeto_edoo_si
-# projeto_edoo_si
-# projeto_edoo_si
