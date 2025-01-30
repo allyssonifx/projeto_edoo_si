@@ -63,5 +63,7 @@ A pasta **"prints"** contém imagens que ilustram o funcionamento do projeto. Ab
 - **print\_projeto\_10**: Exibição completa dos dados do Cerrado.
 - **print\_projeto\_11**: Exibição completa dos dados da Amazônia.
 
+OBS: essas últimas duas não fazem parte do projeto, apenas são exibições em outros programas, como pgAdmin ou ArcGis.
+
 ---
 
