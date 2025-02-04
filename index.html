@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto da Disciplina de EDOO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Projeto da Disciplina de EDOO</h1>
+    
+    <h2>Desenvolvido por</h2>
+    <p><strong>Allysson Fellype Gomes Muniz (afgm2)</strong></p>
+    
+    <h2>Objetivo</h2>
+    <p>Este projeto tem como objetivo criar um sistema de monitoramento e análise de desmatamento. Para isso, foram utilizada bases públicas do <a href="https://terrabrasilis.dpi.inpe.br/" target="_blank">INPE</a> do projeto <a href="https://www.gov.br/inpe/pt-br/area-conhecimento/unidade-amazonia/projetos-e-pesquisas/deter" target="_blank">DETER</a> cerrado e amazônia.</p>
+
+    
+    <h2>Funcionamento</h2>
+    <p>O programa está conectado a um banco de dados que contém bases de desmatamento da Amazônia e do Cerrado, distribuídas em duas tabelas. Durante a execução, há duas opções disponíveis:</p>
+    
+    <h3>1. Atualizar uma das bases:</h3>
+    <ul>
+        <li>O programa acessa a internet para obter os dados mais recentes;</li>
+        <li>Baixa o arquivo shapefile correspondente;</li>
+        <li>Lê e atualiza o banco de dados com novas informações.</li>
+    </ul>
+    
+    <h3>2. Fazer a análise de um terreno:</h3>
+    <ul>
+        <li>O usuário insere uma geometria em formato WKT (preferencialmente no sistema SIRGAS 2000);</li>
+        <li>O programa cruza as informações com os dados do banco;</li>
+        <li>Se houver interseção entre a geometria inserida e as áreas de desmatamento, a área correspondente será retornada.</li>
+    </ul>
+    
+    <h2>Interface</h2>
+    <p>A interface do programa é simples e intuitiva, contendo poucas informações visuais. No entanto, pode haver dificuldades para compilar o projeto devido à dependência de diversas bibliotecas e do banco de dados PostgreSQL.</p>
+    
+    <h2>Bibliotecas Externas Utilizadas</h2>
+    <ul>
+        <li><strong>fltk</strong> (GUI)</li>
+        <li><strong>curl</strong> (download)</li>
+        <li><strong>shapefil</strong> (leitura de arquivos .shp)</li>
+        <li><strong>libpq</strong> (conexão com o banco de dados)</li>
+        <li><strong>minizip</strong> (descompactação de arquivos ZIP)</li>
+    </ul>
+    
+    <h2>Compilação</h2>
+    <p>Para compilar o projeto, foi utilizado <strong>mingw64</strong>, e o seguinte comando no compilador:</p>
+    <pre>
+        g++ -o app main.cpp src/download.cpp src/conexao_banco.cpp -lfltk -lcurl -lshp -lpq -lminizip -lz
+    </pre>
+    
+    <h2>Observações</h2>
+    <p>O desenvolvimento do projeto passou por diversas mudanças e desafios, principalmente na busca por bibliotecas adequadas e na integração de múltiplas classes em C++. Embora o código possa não seguir todas as boas práticas, houve um esforço para mantê-lo funcional e compreensível.</p>
+    
+    <h2>Prints</h2>
+    <p>A pasta <strong>"prints"</strong> contém imagens que ilustram o funcionamento do projeto. Abaixo está a descrição de cada uma:</p>
+    
+    <ul>
+        <li><strong>Interface básica:</strong></li>
+        <img src="prints/print_projeto_1.png" alt="Interface básica">
+        
+        <li><strong>Exemplo de atualização dos dados:</strong></li>
+        <img src="prints/print_projeto_2.png" alt="Atualização dos dados">
+        
+        <li><strong>Análise de uma geometria de imóvel rural do SICAR:</strong></li>
+        <img src="prints/print_projeto_3.png" alt="Análise de geometria">
+        
+        <li><strong>Outro exemplo de análise de terreno:</strong></li>
+        <img src="prints/print_projeto_4.png" alt="Outra análise de geometria">
+        
+        <li><strong>Geometria sem interseção com áreas de desmatamento:</strong></li>
+        <img src="prints/print_projeto_5.png" alt="Sem interseção">
+        
+        <li><strong>Visualização de todas as tabelas utilizadas no banco de dados:</strong></li>
+        <img src="prints/print_projeto_6.png" alt="Tabelas do banco">
+        
+        <li><strong>Tabela de metadados:</strong></li>
+        <img src="prints/print_projeto_7.png" alt="Tabela de metadados">
+        
+        <li><strong>Tabela de desmatamento com coluna de geometria:</strong></li>
+        <img src="prints/print_projeto_8.png" alt="Tabela de desmatamento">
+        
+        <li><strong>Exibição completa dos dados do Cerrado:</strong></li>
+        <img src="prints/print_projeto_10.jpeg" alt="Dados do Cerrado">
+        
+        <li><strong>Exibição completa dos dados da Amazônia:</strong></li>
+        <img src="prints/print_projeto_11.jpeg" alt="Dados da Amazônia">
+    </ul>
+    
+    <p><strong>OBS:</strong> As últimas duas imagens não fazem parte do projeto, apenas são exibições em outros programas, como pgAdmin ou ArcGIS.</p>
+</body>
+</html>
